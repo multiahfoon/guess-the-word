@@ -8,9 +8,9 @@ const secretWord = 'bruh';
 userInput.addEventListener('keyup', function(event) {
     if(event.key == 'Enter') {
         if(userInput.value !== secretWord) {
-            guessResult.innerText = 'Not quite there. Please Try again';
+            guessResult.innerText = `"${userInput.value}" was not the secret word`;
         }else {
-            guessResult.innerText = 'You got the secret word right!';
+            guessResult.innerText = `You got the secret word "${secretWord}" right!`;
         }
 
         userInput.value = '';
