@@ -12,10 +12,12 @@ userInput.addEventListener('keyup', function(event) {
         }else {
             guessResult.innerText = `You got the secret word "${secretWord}" right!`;
         }
-
         userInput.value = '';
     }    
 });
 
 
 
+// make secret word into and array of words
+
+// generate random number to select a random number in wordlist array
