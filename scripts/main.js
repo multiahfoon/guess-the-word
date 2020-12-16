@@ -1,5 +1,6 @@
-const userInput = document.getElementsByClassName('userInput')[0];
-const guessResult = document.getElementsByClassName('guessResult')[0];
+const userInput = document.getElementById('userInput');
+const guessResult = document.getElementById('guessResult');
+const hintDisplay = document.getElementById('hints');
 
 userInput.focus();
 
@@ -10,8 +11,21 @@ let wordlist = ['green', 'tree', 'winter', 'snow', 'spring', 'fall', 'sunday']
 let randomNum = Math.floor(Math.random() * wordlist.length);
 let secretWord = wordlist[randomNum];
 
+let hintArray = [];
+console.log(secretWord);
+for(let i = 0; i <= Math.floor(secretWord.length / 3); i++) {
+    hintArray.push(secretWord[i]);
+}
+
+
+console.log(hintArray);
+
+// display hint text for user
+hintDisplay.innerText = `The word has ${ secretWord.length} letters and starts with "${hintArray.join('')}"`
+
 // event listener used to check users guess
 userInput.addEventListener('keyup', function(event) {
+    console.log(secretWord);
     if(event.key == 'Enter') {
         if(userInput.value !== secretWord ) {
             guessResult.innerText = `"${userInput.value}" was not the secret word`;
@@ -24,3 +38,11 @@ userInput.addEventListener('keyup', function(event) {
 
 
 
+
+
+/*
+features:
+-give user hints
+-number of letters being hinted will be a 3rd of the word
+    - Math.floor(0.3 * secretword.length)
+*/
