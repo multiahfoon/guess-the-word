@@ -2,12 +2,18 @@ const userInput = document.getElementsByClassName('userInput')[0];
 const guessResult = document.getElementsByClassName('guessResult')[0];
 
 userInput.focus();
-const secretWord = 'bruh';
 
+// an array of words to pick from as secret word
+let wordlist = ['green', 'tree', 'winter', 'snow', 'spring', 'fall', 'sunday']
 
+// random number generated and used to select a word from the word list
+let randomNum = Math.floor(Math.random() * wordlist.length);
+let secretWord = wordlist[randomNum];
+
+// event listener used to check users guess
 userInput.addEventListener('keyup', function(event) {
     if(event.key == 'Enter') {
-        if(userInput.value !== secretWord) {
+        if(userInput.value !== secretWord ) {
             guessResult.innerText = `"${userInput.value}" was not the secret word`;
         }else {
             guessResult.innerText = `You got the secret word "${secretWord}" right!`;
@@ -18,6 +24,3 @@ userInput.addEventListener('keyup', function(event) {
 
 
 
-// make secret word into and array of words
-
-// generate random number to select a random number in wordlist array
