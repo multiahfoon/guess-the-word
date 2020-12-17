@@ -24,25 +24,27 @@ console.log(hintArray);
 hintDisplay.innerText = `The word has ${ secretWord.length} letters and starts with "${hintArray.join('')}"`
 
 // event listener used to check users guess
+let currentUserTry = 1;
+
+// look for another listener because this fires for every button pressed might not be a good thing
 userInput.addEventListener('keyup', function(event) {
-    console.log(secretWord);
+    console.log(currentUserTry);
+    
+    
     if(event.key == 'Enter') {
-        if(userInput.value !== secretWord ) {
+        if(userInput.value !== secretWord) {
             guessResult.innerText = `"${userInput.value}" was not the secret word`;
-        }else {
+        }else if(userInput.value == secretWord){
             guessResult.innerText = `You got the secret word "${secretWord}" right!`;
         }
+        if(currentUserTry == 5) {
+            console.log('max tries');
+            userInput.style.display = 'none';
+        }
+
+        currentUserTry++;
         userInput.value = '';
-    }    
+    }
+
 });
 
-
-
-
-
-/*
-features:
--give user hints
--number of letters being hinted will be a 3rd of the word
-    - Math.floor(0.3 * secretword.length)
-*/
