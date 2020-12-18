@@ -2,3 +2,11 @@
 ### A game where you try to guess the secret word
 
 The game is currently still being made. Some features are working but still under development. 
+
+
+### Todo list: These may change
+
+- [ ]   Show lives/Tries
+- [ ]   Show which letters were correct
+- [ ]   Show old guesses
+- [ ]   Track wins and losses
