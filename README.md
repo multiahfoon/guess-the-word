@@ -6,7 +6,7 @@ The game is currently still being made. Some features are working but still unde
 
 ### Todo list: These may change
 
-- [ ]   Show lives/Tries
+- [x]   Show lives/Tries
 - [ ]   Show which letters were correct
 - [ ]   Show old guesses
 - [ ]   Track wins and losses
