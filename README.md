@@ -7,6 +7,7 @@ The game is currently still being made. Some features are working but still unde
 ### Todo list: These may change
 
 - [x]   Show lives/Tries
+- [ ]   Play again button
 - [ ]   Track wins and losses
 
 ### https://multiahfoon.github.io/guess-the-word/
